@@ -6,8 +6,8 @@
     <title>VetSys - Sistema Veterinário</title>
     <link rel="stylesheet" href="../public/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="../public/js/script.js"></script>
-</head>
+    
+    </head>
 <body>
 
     <div class="dashboard-container">
@@ -16,26 +16,27 @@
             <div class="logo">
                 <i class="fas fa-paw"></i> VetSys
             </div>
+            
             <nav class="sidebar-nav">
-                <a href="#" class="nav-item active" data-page="inicio">
+                <a href="#" class="nav-item active" data-page="inicio" data-title="Início">
                     <i class="fas fa-home"></i> Início
                 </a>
-                <a href="#" class="nav-item" data-page="pacientes">
+                <a href="#" class="nav-item" data-page="pacientes" data-title="Pacientes">
                     <i class="fas fa-users"></i> Pacientes
                 </a>
-                <a href="#" class="nav-item" data-page="consultas">
+                <a href="#" class="nav-item" data-page="consultas" data-title="Consultas">
                     <i class="fas fa-notes-medical"></i> Consultas
                 </a>
-                <a href="#" class="nav-item" data-page="agendamento">
+                <a href="#" class="nav-item" data-page="agendamento" data-title="Agendamento">
                     <i class="fas fa-calendar-alt"></i> Agendamento
                 </a>
-                <a href="#" class="nav-item" data-page="estoque">
+                <a href="#" class="nav-item" data-page="estoque" data-title="Estoque">
                     <i class="fas fa-box"></i> Estoque
                 </a>
-                <a href="#" class="nav-item" data-page="financeiro">
+                <a href="#" class="nav-item" data-page="financeiro" data-title="Financeiro">
                     <i class="fas fa-dollar-sign"></i> Financeiro
                 </a>
-                <a href="#" class="nav-item" data-page="relatorios">
+                <a href="#" class="nav-item" data-page="relatorios" data-title="Relatórios">
                     <i class="fas fa-chart-line"></i> Relatórios
                 </a>
             </nav>
@@ -46,7 +47,7 @@
             <header class="header">
                 <div class="header-title" id="page-title">Início</div>
                 <div class="user-profile">
-                    <span>Dr. Ana Silva</span>
+                    <span>Dr. Anderson</span>
                     <i class="fas fa-user-circle"></i>
                 </div>
             </header>
@@ -54,20 +55,21 @@
             <section class="content-area">
                 
                 <div id="page-inicio" class="page-content active-page">
+                    <h2>Dashboard</h2>
                     <div class="quick-summary">
                         <div class="summary-card total-pacientes">
                             <h3>Total de Pacientes</h3>
-                            <p>89</p>
+                            <p>0</p>
                             <i class="fas fa-dog"></i>
                         </div>
                         <div class="summary-card consultas-hoje">
                             <h3>Consultas Hoje</h3>
-                            <p>5</p>
+                            <p>0</p>
                             <i class="fas fa-calendar-day"></i>
                         </div>
                         <div class="summary-card procedimentos-mes">
                             <h3>Procedimentos (Mês)</h3>
-                            <p>12</p>
+                            <p>0</p>
                             <i class="fas fa-syringe"></i>
                         </div>
                     </div>
@@ -76,7 +78,7 @@
                         <h2>Próximas Consultas</h2>
                         <ul>
                             <li>
-                                <strong>10:00</strong> - Max (Golden Retriever) - Vacinação
+                                <strong>13:00</strong> - Max (Golden Retriever) - Vacinação
                             </li>
                             <li>
                                 <strong>11:30</strong> - Mia (Siamês) - Exame de Rotina
@@ -285,4 +287,131 @@
                         </div>
                         <div class="summary-card low-stock">
                             <h3>Estoque Baixo</h3>
-                            <p class="warning
+                            <p class="warning-count">8</p>
+                        </div>
+                        <div class="summary-card expired">
+                            <h3>Vencidos Próximos</h3>
+                            <p>3</p>
+                        </div>
+                    </div>
+
+                    <div class="stock-table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Categoria</th>
+                                    <th>Quantidade</th>
+                                    <th>Validade</th>
+                                    <th>Alerta</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Vacina V8</td>
+                                    <td>Imunização</td>
+                                    <td>50</td>
+                                    <td>12/2026</td>
+                                    <td><span class="status-badge active">OK</span></td>
+                                    <td><button class="action-btn edit"><i class="fas fa-edit"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Dipirona 500mg</td>
+                                    <td>Medicamentos</td>
+                                    <td>15</td>
+                                    <td>01/2026</td>
+                                    <td><span class="status-badge low-stock-alert">Baixo</span></td>
+                                    <td><button class="action-btn edit"><i class="fas fa-edit"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Ração Royal 2kg</td>
+                                    <td>Alimentos</td>
+                                    <td>120</td>
+                                    <td>03/2027</td>
+                                    <td><span class="status-badge active">OK</span></td>
+                                    <td><button class="action-btn edit"><i class="fas fa-edit"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="page-financeiro" class="page-content">
+                    <h2>Resumo Financeiro - Mês de Outubro</h2>
+                    <div class="finance-summary">
+                        <div class="summary-card revenue">
+                            <h3>Receita Total</h3>
+                            <p>0</p>
+                        </div>
+                        <div class="summary-card expenses">
+                            <h3>Despesas</h3>
+                            <p>0</p>
+                        </div>
+                        <div class="summary-card profit">
+                            <h3>Lucro Estimado</h3>
+                            <p>0</p>
+                        </div>
+                    </div>
+
+                    <div class="finance-area-grid">
+                        <div class="chart-container">
+                            <h3>Gráfico de Receitas por Serviço</h3>
+                            <p class="placeholder-chart">Espaço para Gráfico (Ex: Chart.js)</p>
+                        </div>
+                        <div class="recent-transactions">
+                            <h3>Transações Recentes</h3>
+                            <ul class="transaction-list">
+                                <li class="income">Vacinação Max <span>+ R$ 150,00</span></li>
+                                <li class="expense">Conta de Luz <span>- R$ 350,00</span></li>
+                                <li class="income">Consulta Pipo <span>+ R$ 180,00</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="page-relatorios" class="page-content">
+                    <h2>Relatórios e Estatísticas</h2>
+                    
+                    <div class="report-generation-card">
+                        <h3>Gerar Novo Relatório</h3>
+                        <form class="report-form">
+                            <div class="form-group">
+                                <label for="tipo-relatorio">Tipo de Relatório:</label>
+                                <select id="tipo-relatorio" required>
+                                    <option>Relatório de Consultas por Período</option>
+                                    <option>Relatório de Receita Mensal</option>
+                                    <option>Relatório de Pacientes Ativos/Inativos</option>
+                                    <option>Relatório de Estoque Crítico</option>
+                                </select>
+                            </div>
+                            <div class="form-group half-width">
+                                <label for="data-inicio">De:</label>
+                                <input type="date" id="data-inicio">
+                            </div>
+                            <div class="form-group half-width">
+                                <label for="data-fim">Até:</label>
+                                <input type="date" id="data-fim">
+                            </div>
+                            <button type="submit" class="add-patient-btn">Gerar Relatório</button>
+                        </form>
+                    </div>
+
+                    <div class="download-history-card">
+                        <h3>Histórico de Downloads</h3>
+                        <ul class="download-list">
+                            <li><i class="fas fa-file-pdf"></i> Receita - Abr/2025 <a href="#"><i class="fas fa-download"></i></a></li>
+                            <li><i class="fas fa-file-csv"></i> Pacientes Ativos - Mai/2025 <a href="#"><i class="fas fa-download"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="../public/js/script.js"></script>
+</body>
+</html>
